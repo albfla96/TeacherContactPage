@@ -6,43 +6,24 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import imageToAdd from "../header/logo_en.png";
-import "./Header.css"
-
-// const useStyles = makeStyles({
-//     navlinks: {
-//       display: "flex",
-//       marginLeft: 10,
-//     },
-//    logo: {
-//       flexGrow: "1",
-//       cursor: "pointer",
-//     },
-//     link: {
-//       textDecoration: "none",
-//       color: "white",
-//       fontSize: "20px",
-//       marginLeft: 20,
-//       "&:hover": {
-//         color: "yellow",
-//         borderBottom: "1px solid white",
-//       },
-//     },
-//   });
+import styles from "../helper/styles";
 
 function Navbar() {
+
+  const classes = styles();
 
   return (
     <AppBar position="static">
       <CssBaseline />
       <Toolbar>
-        <Typography variant="h4" className="logo">
+        <Typography variant="h4" className={classes.logo}>
             <img src={imageToAdd} alt="Image" />
         </Typography>
-          <div className="navlinks">
-            <Link to="/" className="link">
+          <div className={classes.navlinks}>
+            <Link to="/" className={classes.link}>
               Home
             </Link>
-            <Link to="/contact" className="link">
+            <Link to="/contact" className={classes.link}>
               Contact
             </Link>
           </div>
